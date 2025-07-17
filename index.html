@@ -224,6 +224,33 @@
     </div>
     <p>&copy; 2025 Sunday Ifeoluwa. All rights reserved.</p>
   </footer>
+
+  <!-- Floating WhatsApp Button -->
+<a href="#" class="whatsapp-float" id="whatsappBtn" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="pulse"></span>
+</a>
+
+<!-- WhatsApp Quick Chat Popup -->
+<div class="whatsapp-popup" id="whatsappPopup">
+  <div class="wp-header">
+    <img src="./images/me.jpg" alt="Sunday Ifeoluwa" class="wp-avatar">
+    <div>
+      <div class="wp-name">Sunday Ifeoluwa</div>
+      <div class="wp-status">Typically replies instantly</div>
+    </div>
+    <button class="wp-close" id="wpClose">&times;</button>
+  </div>
+  <div class="wp-message">
+    👋 Hi there! Need help or want to chat?  
+    Click "Start WhatsApp Chat" below and I'll reply as soon as possible!
+  </div>
+  <a href="https://wa.me/+2349066737888" class="wp-action" target="_blank">
+    <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
+  </a>
+</div>
+
+
   <script>
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -350,6 +377,27 @@
       const rate = scrolled * -0.5;
       hero.style.transform = `translateY(${rate}px)`;
     });
+
+  // WhatsApp Floating Button and Popup
+  const whatsappBtn = document.getElementById('whatsappBtn');
+  const whatsappPopup = document.getElementById('whatsappPopup');
+  const wpClose = document.getElementById('wpClose');
+
+  whatsappBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    whatsappPopup.style.display = 'block';
+  });
+  wpClose.addEventListener('click', function() {
+    whatsappPopup.style.display = 'none';
+  });
+
+  // Close popup if click outside
+  window.addEventListener('click', function(e) {
+    if (whatsappPopup.style.display === 'block' && !whatsappPopup.contains(e.target) && e.target !== whatsappBtn && !whatsappBtn.contains(e.target)) {
+      whatsappPopup.style.display = 'none';
+    }
+  });
+
   </script>
 </body>
 </html>
