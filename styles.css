@@ -485,8 +485,19 @@
     .skills-grid, .projects-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 500px) {
-    .section-title { font-size: 1.35rem;}
-    .nav-links { gap: 1rem;}
-    .avatar { width: 92px; height: 92px;}
-    .project-image {height: 98px; font-size:1.7rem;}
+    .section-title { 
+      font-size: 1.35rem;
+    }
+    .nav-links { 
+      gap: 1rem;
+      font-size: 12px;
+    }
+    .avatar { 
+      margin: 10px;
+      width: 92px; 
+      height: 92px;}
+    .project-image {
+      height: 98px; 
+      font-size:1.7rem;
+    }
   }
